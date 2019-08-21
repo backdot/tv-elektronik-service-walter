@@ -9,7 +9,7 @@ const Service = ({ title, url, children }) => {
     <div className="w-full sm:w-1/2 md:w-1/3 p-2">
       <Link
         to={url}
-        className="text-2xl text-indigo-700 hover:text-indogo-600 hover:underline"
+        className="text-2xl text-blue-700 hover:text-indogo-600 hover:underline"
       >
         {title}
       </Link>
@@ -30,9 +30,20 @@ const Services = ({ data }) => {
         style={{ backgroundImage: `url(${service_img})` }}
       >
         <div className="container w-3/4 md:w-1/2 mt-20 font-serif font-hairline self-start">
-          <h1 className="text-4xl md:text-5xl text-indigo-700 px-2">
-            Services
+          <h1 className="text-4xl md:text-5xl text-blue-700">
+            Unsere Leistungen
           </h1>
+
+          <h2 className="text-2xl md:text-2xl">Ihr Ansprechpartner rund um die Elektronik</h2>
+          <p>Elekronik Service Walter ist Ihr kompetenter Partner rund um alle Fragen der Unterhaltungselektronik.
+          Kaufberatung bezüglich Größe und Technologie (LED, LCD,Plasma,3D) Ihres neuen TV Gerätes.
+          Benötigen Sie ein neues Empfangsgerät (Receiver) dazu?
+          Ist meine Satellitenanlage dafür tauglich?
+          <br/><br/>
+          Aber auch wenn Sie ein defektes Haushaltsgerät haben können Sie sich an mich wenden.
+          <br/><br/>
+          Meine Stärken liegen in der Kundenorientierung, einem engagierten Service und der Vielseitigkeit des Leistungsspektrums.
+          Aufgrund der komprimierten Firmenstruktur kann ich Ihnen attraktive Preise bei ausgezeichneter Qualität bieten.</p>
         </div>
 
         <div className="flex flex-wrap mt-10 md:mt-20">

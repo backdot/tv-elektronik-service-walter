@@ -8,8 +8,8 @@ const Profile = ({ name, title, url, email, image, children }) => {
   return (
     <div className="w-full sm:w-1/2 mt-4 px-2 flex flex-col">
       <div className="flex">
-        <div className="p-2 w-24 h-24">
-          <img alt={name} className="rounded-full " src={withPrefix(image)} />
+        <div className="mr-4">
+          <img alt={name} className="" src={withPrefix(image)} />
         </div>
         <div className="w-2/3 flex flex-col">
           <h2 className="text-2xl font-semibold">{name}</h2>
@@ -45,16 +45,24 @@ const Team = ({data}) => {
         style={{ backgroundImage: `url(${team})` }}
       >
         <div className="container w-3/4 md:w-1/2 mt-20 font-serif font-hairline self-start">
-          <h1 className="text-3xl md:text-5xl text-indigo-700 leading-tight">
-            Meet The Team
+          <h1 className="text-3xl md:text-5xl mb-2 text-blue-700 leading-tight">
+            Das Unternehmen
           </h1>
           <p className="text-base">
-            Our team of qualified accountants and financial consultants can help
-            your business at any stage of it’s growth.
+            Mit Juni 2010, nach über 20-jähriger einschlägigen Berufserfahrung, eröffnete
+            Herr WALTER Manfred eine Reparatur- und Verkaufsstätte in Höflein am Wienerweg 3.
+            <br/><br/>
+            Service und Reparatur von TV, Video, Kaffeemaschinen und Haushaltsgeräte aller Marken,
+            Installation von SAT-Anlagen und Verkauf von Neuprodukten zählen zum umfangreichen Angebot.
+            Professionelle Beratung beim Verkauf sowie Zufriedenheit des Kunden stehen beim
+            Jungunternehmer, Hr. Walter an erster Stelle.
+            <br/><br/>
+            Keine offiziellen Öffnungszeiten aber jederzeit erreichbar!
+            Terminvereinbarung unter der Handy-Nr. 0660 34 36 936
           </p>
         </div>
 
-        <div className="flex flex-wrap mt-10 md:mt-16 lg:mt-24">
+        <div className="w-full mt-10 md:mt-16 lg:mt-24">
           {members.map(({node}) => {
             const {title, jobtitle, email, linkedinurl, image, path} = node.frontmatter
             return (

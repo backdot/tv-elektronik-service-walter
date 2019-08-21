@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import cx from "classnames";
-import logo from "../images/logo.svg";
+import logo from "../images/logo.png";
 
 const StyledLink = ({ className, ...props }) => {
   className = cx(className);
@@ -14,7 +14,7 @@ const StyledLink = ({ className, ...props }) => {
 
 const HeaderLink = ({ className, children, ...props }) => {
   className = cx(
-    "w-full md:w-auto py-2 md:px-1 -mb-1 text-sm font-medium uppercase hover:text-indigo-500 border-transparent border-b-4 md:hover:border-indigo-600 relative",
+    "w-full md:w-auto py-2 md:px-1 -mb-1 text-sm font-medium uppercase hover:text-blue-500 border-transparent border-b-4 md:hover:border-blue-600 relative",
     className
   );
   return (
@@ -22,7 +22,7 @@ const HeaderLink = ({ className, children, ...props }) => {
       <Link
         className={className}
         {...props}
-        activeClassName="md:border-indigo-600"
+        activeClassName="md:border-blue-600"
       >
         {children}
       </Link>
@@ -36,15 +36,15 @@ const Header = ({ className, ...props }) => {
   className = cx("w-full shadow-md", className);
   return (
     <div className={className} {...props}>
-      <div className="flex flex-wrap flex-row items-start md:items-center justify-between px-6 md:px-10 lg:px-24 text-indigo-700">
+      <div className="flex flex-row items-start md:items-center justify-between px-6 md:px-10 lg:px-24 text-blue-700">
         <div className="my-2">
           <Link to="/">
-            <img className="w-3/5" alt="Figurit Homepage" src={logo} />
+            <img width="270" alt="TV Service Walter" src={logo} />
           </Link>
         </div>
 
         <button
-          className="block relative md:hidden border border-indigo-700 my-2 px-3 py-2"
+          className="block relative md:hidden border border-blue-700 my-2 px-3 py-2"
           onClick={() => toggleExpansion(!isExpanded)}
         >
           <svg
@@ -62,11 +62,11 @@ const Header = ({ className, ...props }) => {
             isExpanded ? `block` : `hidden`
           } w-full md:w-auto flex md:flex flex-col md:flex-row justify-center md:justify-end items-stretch md:items-center py-1`}
         >
-          <HeaderLink to="/">Home</HeaderLink>
-          <HeaderLink to="/services">Services</HeaderLink>
-          <HeaderLink to="/team">Team</HeaderLink>
-          <HeaderLink to="/testimonials">Testimonials</HeaderLink>
-          <HeaderLink to="/contact">Contact</HeaderLink>
+          <HeaderLink to="/services">Leistungen</HeaderLink>
+          <HeaderLink to="/unternehmen">Unternehmen</HeaderLink>
+          <HeaderLink to="/preise">Preise</HeaderLink>
+          <HeaderLink to="/downloads">Downloads</HeaderLink>
+          <HeaderLink to="/kontakt">Kontakt</HeaderLink>
         </div>
       </div>
     </div>

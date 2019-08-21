@@ -1,13 +1,11 @@
 ---
-path: '/testimonials/mikes-auto-parts'
-title: 'Mikes Auto Parts'
-date: 2018-11-28T15:01:01+10:00
+path: '/testimonials/lion-creative'
+title: 'Unternehmen'
+date: 2018-11-28T15:05:36+10:00
 draft: false
 image: ''
 businessurl: ''
-name: 'Tony Smith'
-business: 'Local Business Name'
-jobtitle: 'Owner'
+name: 'Vorname Nachname'
 ---
 
-> Value proposition accelerator crowdsource channels customer. Research & development seed money channels creative. Ramen buzz ecosystem technology equity paradigm shift business-to-business lean startup social proof client startup. Agile development partnership business-to-consumer pitch marketing twitter venture advisor metrics alpha bootstrapping infrastructure seed round.
+> Sales bandwidth business model canvas android infographic leverage prototype traction buzz. Founders stock startup incubator gamification series A financing churn rate gen-z ecosystem bootstrapping branding. Interaction design partnership technology. Hackathon infrastructure bandwidth bootstrapping.

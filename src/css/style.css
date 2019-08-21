@@ -47,7 +47,7 @@
 }
 
 .testimonial-quote:before{
-    @apply text-indigo-700;
+    @apply text-blue-700;
     content: '\201C';
     transform: translate(-50%, -50%);
     position: absolute;
@@ -102,4 +102,12 @@
 .-skew-y-5 {
   -webkit-transform: skewY(-5deg);
   transform: skewY(-5deg);
+}
+
+/* Map */
+.leaflet-container {
+  height: 300px;
+  width: 300px;
+  max-width: 100%;
+  overflow: hidden;
 }

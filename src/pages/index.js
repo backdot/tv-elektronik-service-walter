@@ -1,17 +1,19 @@
 import React from "react";
+import { Link, graphql } from "gatsby";
 import cx from "classnames";
+import Helmet from "react-helmet";
+
 import home from "../images/undraw_taking_notes_tjaf.svg";
 import branding from "../images/noun_branding_1885335.svg";
 import processing from "../images/noun_The Process_1885341.svg";
 import modeling from "../images/noun_3d modeling_1885342.svg";
-import Helmet from "react-helmet";
-import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Testimonial from "../components/testimonial";
 
 const StyledButton = ({ className, children, ...props }) => {
   className = cx(
-    "py-2 px-4 bg-indigo-700 hover:bg-indigo-600 text-base text-white font-bold uppercase rounded shadow-md hover:-translate-1",
+    "py-2 px-4 bg-blue-700 hover:bg-blue-600 text-base text-white font-bold uppercase rounded shadow-md hover:-translate-1",
     className
   );
   return (
@@ -26,7 +28,7 @@ const Service = ({ title, url, children }) => {
     <div className="w-full sm:w-1/2 md:w-1/3 p-2">
       <Link
         to={url}
-        className="text-2xl text-indigo-700 hover:text-indogo-600 hover:underline"
+        className="text-2xl text-blue-700 hover:text-indogo-600 hover:underline"
       >
         {title}
       </Link>
@@ -37,6 +39,7 @@ const Service = ({ title, url, children }) => {
 
 function Index({ data }) {
   const services = data.services.edges;
+  const testimonials = data.testimonials.edges;
 
   return (
     <Layout headerClass="relative bg-white">
@@ -46,17 +49,15 @@ function Index({ data }) {
         style={{ backgroundImage: `url(${home})` }}
       >
         <div className="w-4/5 md:w-3/4 lg:w-7/12 mt-20 font-serif font-hairline self-start">
-          <h1 className="text-3xl md:text-5xl text-indigo-700 leading-tight">
-            Serif - Gatsby Small Business Theme.
+          <h1 className="text-3xl md:text-6xl text-blue-700 leading-tight">
+            TV Service Walter
           </h1>
-          <p className="text-base">
-            Multiple content types using Markdown and JSON sources. Responsive
-            design and SCSS. This is a beautiful and artfully designed starting
-            theme.
+          <p className="text-2xl">
+            Reparatur von Fernseher, SAT-Anlagen, Kaffeemaschinen und EDV
           </p>
         </div>
 
-        <div className="container w-3/4 sm:w-7/12 lg:w-5/12 xl:1/4 mt-10 self-start">
+        <div className="container w-3/4 sm:w-7/12 lg:w-7/12 xl:1/4 mt-10 self-start">
           <div
             className="bg-white rounded flex flex-col sm:flex-row items-start sm:items-center text-sm p-4"
             style={{
@@ -66,25 +67,35 @@ function Index({ data }) {
           >
             <div className="flex-1">
               <p>
-                <strong>Phone: </strong>
-                XXX XXX XXX
+                <strong>Telefon: </strong>
+                <a
+                  className="hover:text-indogo-600 hover:underline"
+                  href="tel:+436603436936"
+                >
+                  0660 34 36 936
+                </a>
               </p>
               <p>
                 <strong>Email: </strong>
-                xxx@xxx.com
+                <a
+                  className="hover:text-indogo-600 hover:underline"
+                  href="mailto:manfred.walter@drei.at"
+                >
+                  manfred.walter@drei.at
+                </a>
               </p>
             </div>
             <div className="flex-initial mt-6 sm:mt-0">
               <Link to="/contact">
-                <StyledButton>Contact</StyledButton>
+                <StyledButton>Termin vereinbaren</StyledButton>
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col mt-10 md:mt-16">
+        <div className="flex flex-col mt-20">
           <p className="mb-2 text-4xl text-gray-800 self-center">
-            Our Services
+            Unsere Leistungen
           </p>
 
           <div className="flex flex-wrap">
@@ -101,14 +112,14 @@ function Index({ data }) {
 
           <div className="self-center mt-8">
             <Link to="/services">
-              <StyledButton>View all services</StyledButton>
+              <StyledButton>Alle Leistungen anzeigen</StyledButton>
             </Link>
           </div>
         </div>
 
-        <div className="flex flex-col mt-10 md:mt-16">
+        <div className="flex flex-col mt-20">
           <p className="mb-2 text-4xl text-gray-800 self-center">
-            Our Features
+            Ihre Vorteile
           </p>
 
           <div className="flex flex-wrap justify-center items-stretch -mx-2">
@@ -117,8 +128,8 @@ function Index({ data }) {
                 <div className="w-16 h-16 mb-4">
                   <img alt="branding" src={branding} />
                 </div>
-                <p className="text-2xl w-full">Free Consultation</p>
-                <p>New clients recieve an obligation free consultation.</p>
+                <p className="text-2xl w-full">Eingehende Beratung</p>
+                <p>Als Kunde werden Sie über alle fachlichen Schritte aufgeklärt.</p>
               </div>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 mt-2">
@@ -126,8 +137,8 @@ function Index({ data }) {
                 <div className="w-16 h-16 mb-4">
                   <img alt="processing" src={processing} />
                 </div>
-                <p className="text-2xl w-full">Certified Accountants</p>
-                <p>All members of our team are certified accountants.</p>
+                <p className="text-2xl w-full">Präzises Handwerk</p>
+                <p>Auf diese Qualität können Sie sich verlassen.</p>
               </div>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/3 mt-2">
@@ -135,10 +146,28 @@ function Index({ data }) {
                 <div className="w-16 h-16 mb-4">
                   <img alt="modeling" src={modeling} />
                 </div>
-                <p className="text-2xl w-full">Tax Compliance</p>
-                <p>We stay up to date on the latest changes to the tax code.</p>
+                <p className="text-2xl w-full">Einschlägige Erfahrung</p>
+                <p>Sie profitieren von jahrelanger Praxis.</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col mt-20">
+          <p className="mb-2 text-4xl text-gray-800 self-center">
+            Empfehlungen
+          </p>
+
+          <div className="w-full mt-2 flex flex-row flex-wrap justify-between">
+            {testimonials.map(({ node }) => {
+              const { title, name, jobtitle, path } = node.frontmatter;
+              const html = node.html;
+              return (
+                <Testimonial key={path} title={title} name={name} jobTitle={jobtitle}>
+                  <div dangerouslySetInnerHTML={{ __html: html }} />
+                </Testimonial>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -159,6 +188,21 @@ export const query = graphql`
             path
           }
           excerpt
+        }
+      }
+    }
+    testimonials: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/content/testimonials/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            name
+            jobtitle
+          }
+          html
         }
       }
     }
