@@ -9748,6 +9748,11 @@ react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha1-W7weLSkUHJ+9/tRWND/ivEMKahY=
 
+react-leaflet-universal@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-leaflet-universal/-/react-leaflet-universal-2.1.0.tgz#b9cd1342c0077475cdd314160686d75c3a71bc0e"
+  integrity sha512-K5+FEj6yBPSUMgiKMB4rmwmmZ5VmbX/j+UWwsAqIBqny4poFSsIeovSlolEXFkdZFGTXLKgYSzh89Hiejg04mA==
+
 react-leaflet@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-2.4.0.tgz#9cef74e14aeeb094bfe662b46de1682623c090ea"

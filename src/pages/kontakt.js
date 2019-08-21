@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby";
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+// import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -50,14 +50,14 @@ const Contact = () => {
           service@tv-elektronik-service-walter.at<br/>
           </p>
 
-          <h3 className="mt-10 mb-2 text-2xl">Karte</h3>
+          {/* <h3 className="mt-10 mb-2 text-2xl">Karte</h3>
           <Map center={position} zoom={13}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             />
             <Marker position={position}></Marker>
-          </Map>
+          </Map> */}
 
           <h3 className="mt-10 mb-2 text-2xl">Mit dem eigenene Fahrzeug</h3>
           <p>Ostautobahn A4 Abfahrt Bruck/West, folgen Sie der Beschilderung Richtung Höflein</p>
